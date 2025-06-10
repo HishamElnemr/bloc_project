@@ -1,5 +1,6 @@
 import 'package:bloc_project/constants/app_colors.dart';
 import 'package:bloc_project/presentation/widgets/build_bloc_widget.dart';
+import 'package:bloc_project/presentation/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc_project/business_logic/cubit/characters_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,10 +23,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.myYellow,
-        title: const Text('Characters'),
-      ),
+      //appBar: customAppBar(),
       body: const BuildBlocWidget(),
     );
   }

@@ -1,8 +1,12 @@
+import 'package:bloc_project/presentation/widgets/character_item.dart';
 import 'package:flutter/material.dart';
+import 'package:bloc_project/data/models/characters.dart' as model;
 
 class BuildCharactersList extends StatelessWidget {
-  const BuildCharactersList({super.key, required this.itemCount});
+  const BuildCharactersList({super.key, required this.itemCount, required this.character});
   final int itemCount;
+  final List <model.Characters> character;
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -12,17 +16,12 @@ class BuildCharactersList extends StatelessWidget {
         crossAxisSpacing: 2,
         mainAxisSpacing: 2,
       ),
-      shrinkWrap: true,
+      shrinkWrap: true,  
       physics: const ClampingScrollPhysics(),
       padding: EdgeInsets.zero,
       itemCount: itemCount,
       itemBuilder: (ctx, index) {
-        return Container(
-          decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(10),
-          ),
-        );
+        return CharacterItem(character: character[index]);
       },
     );
   }

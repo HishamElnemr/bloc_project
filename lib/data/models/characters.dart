@@ -5,6 +5,7 @@ class Characters {
   final String species;
   final String gender;
   final String image;
+  final int? charId;
 
   Characters({
     required this.id,
@@ -13,6 +14,7 @@ class Characters {
     required this.species,
     required this.gender,
     required this.image,
+    required this.charId,
   });
 
   factory Characters.fromJson(Map<String, dynamic> json) {
@@ -23,6 +25,7 @@ class Characters {
       species: json['species'] ?? '',
       gender: json['gender'] ?? '',
       image: json['image'] ?? '',
+      charId: json['char_id'] ?? 0,
     );
   }
 }
